@@ -41,7 +41,7 @@ left = \relative c' {
   % Music follows here.
   <c e>2 a2 <b e g>2 g2 <a c e> e <f e'> d'
   <c d>2 a2 <b e g>2 g2 <a c e> e <f e'> d'
-  \clef treble \stemUp <g b>1 <e g b> <e e'> <g e'>
+  \clef treble \stemUp <g b>1 <e g b> <a e'> <f c'>
   \clef bass \stemDown <b,, g'> <e b> <a c> <d, d'>2 <d d'>~<d d'>1
 
 }
@@ -71,7 +71,7 @@ pianoPart = \new PianoStaff \with {
   \midi {
     \context {
       \Score
-      tempoWholesPerMinute = #(ly:make-moment 62 4)
+      tempoWholesPerMinute = #(ly:make-moment 65 4)
     }
   }
 }
