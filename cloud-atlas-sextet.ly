@@ -23,7 +23,8 @@ global = {
 violin = \relative c'' {
   \global
   % Music follows here.
-  %r2 ~ r2 ~ r2 g4 ~ g ~ g
+  r1^\ppp  r1 r1 r1  c'1 b e c d b e c d~ << {d2} {b2} >> a 
+  r1 r1 r1 r1 r1 r1 r1 r1  d b e c d~ << {d2} {b2} >> a 
 
 }
 
@@ -33,16 +34,26 @@ right = \relative c'' {
   g4 c4~c g' g b,~b g' g c,~c g' g c,~c a
   g c4~c g' g b,~b g' g c,~c g' g c,~c a'
   g d' c b g2 c4 b a2 d4 c  a1
-  <d,, g>4 d' c b <e, g>2 c'4 b a2 d4 c <g b>2 <fs a>2~<fs a>1
+  <d,, g>4 d' c b  <g b>2^\fermata <fs a>2^\fermata
+  
+    g4 c4~c g' g b,~b g' g c,~c g' g c,~c~c
+  g c4~c g' g b,~b g' g c,~c g' g c,~c a'
+  g d' c b g2 c4 b a2 d4 c  a1
+  <d,, g>4 d' c b  <g b>2^\fermata <fs a>2^\fermata
 }
 
 left = \relative c' {
   \global
   % Music follows here.
-  <c e>2 a2 <b e g>2 g2 <a c e> e <f e'> d'
+  <c e>2^\p a2 <b e g>2 g2 <a c e> e <f e'> d'
   <c d>2 a2 <b e g>2 g2 <a c e> e <f e'> d'
-  \clef treble \stemUp <g b>1 <e g b> <a e'> <f c'>
-  \clef bass \stemDown <b,, g'> <e b> <a c> <d, d'>2 <d d'>~<d d'>1
+  \clef treble \stemUp <g b>1 <e g b> <e a c> <f a c>
+  \clef bass \stemDown <b,, g'>2 <e b'> <d d'>2 <d d'>
+  
+    <c e>2^\p a2 <b e g>2 g2 <a c e> e <f e'> d'
+  <c d>2 a2 <b e g>2 g2 <a c e> e <f e'> d'
+  \clef treble \stemUp <g b>1 <e g b> <e a c> <f a c>
+  \clef bass \stemDown <b,, g'>2 <e b'> <d d'>2 <d d'>
 
 }
 
@@ -71,7 +82,7 @@ pianoPart = \new PianoStaff \with {
   \midi {
     \context {
       \Score
-      tempoWholesPerMinute = #(ly:make-moment 65 4)
+      tempoWholesPerMinute = #(ly:make-moment 60 4)
     }
   }
 }
