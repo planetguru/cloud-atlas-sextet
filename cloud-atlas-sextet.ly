@@ -23,7 +23,7 @@ global = {
 violin = \relative c'' {
   \global
   % Music follows here.
-  r1^\ppp  r1 r1 r1  c'1 b e c d b e c d~ << {d2} {b2} >> a
+  r1^\pppp  r1 r1 r1  c'1 b e c d b e c d~ << {d2} {b2} >> a
   r1 r1 r1 r1 r1 r1 r1 r1  d b e d a
 
   % oscilate
@@ -49,26 +49,31 @@ cello = \relative c {
   % Music follows here.
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
-  
-  %oscillate 
+
+  %oscillate
   g16 e g e g e g e  a e a e a e a e g e g e g e g e c' e, c' e, b' e, b' e,
 }
 
 secondCello = \relative c {
+  \global
+
+}
+
+contrabasso = \relative c {
   \global
   % Music follows here.
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
   c,8^\pp^. r c8^. r c8^. r c8^. r  e8^. r e8^. r e8^. r e8^. r  a8^. r a8^. r a8^. r a8^. r  <f>8^. r <f>8^. r <f>8^. r <f>8^. r
   c8^\pp^. r c8^. r c8^. r c8^. r  b8^. r b8^. r b8^. r b8^. r  a'8^. r a8^. r a8^. r a8^. r  f8^. r f8^. r f8^. r f8^. r
   g8^. r g8^. r g8^. r g8^. r   e^. r e^. r e^. r e^. r   a^. r a^. r a^. r a^. r   d^. r d^. r d^. r d^. r   d^. r d^. r d^. r d^. r
-  
+
   %oscillate
-  c^. r   c^. r   c^. r   c^. r  e^. r  e^. r  e^. r  e^. r   a^.r  a^.r  a^.r  a^.r   f^.r  f^.r  f^.r  f^.r   c^.r c^.r c^.r c^.r   b'^.r b^.r b^.r b^.r 
-  a^.r  a^.r  a^.r  a^.r  f^.r  f^.r  f^.r  f^.r   g^.r  g^.r  g^.r  g^.r  e^.r  e^.r  e^.r  e^.r  a^.r  a^.r  a^.r  a^.r  f^.r f^.r f^.r f^.r 
+  c^. r   c^. r   c^. r   c^. r  e^. r  e^. r  e^. r  e^. r   a^.r  a^.r  a^.r  a^.r   f^.r  f^.r  f^.r  f^.r   c^.r c^.r c^.r c^.r   b'^.r b^.r b^.r b^.r
+  a^.r  a^.r  a^.r  a^.r  f^.r  f^.r  f^.r  f^.r   g^.r  g^.r  g^.r  g^.r  e^.r  e^.r  e^.r  e^.r  a^.r  a^.r  a^.r  a^.r  f^.r f^.r f^.r f^.r
   g^.r  g^.r  g^.r  g^.r  e^.r e^.r  e^.r  e^.r  a^.r  a^.r a^.r a^.r  d,^.r d^.r d^.r d^.r
-  
+
   %flute
-  % starts same as oscillate with:    c^. r   c^. r   c^. r   c^. r 
+  % starts same as oscillate with:    c^. r   c^. r   c^. r   c^. r
 }
 
 right = \relative c'' {
@@ -77,7 +82,7 @@ right = \relative c'' {
   g4 c4~c g' g b,~b g' g c,~c g' g c,~c a
   g c4~c g' g b,~b g' g c,~c g' g c,~c a'
   g d' c b g2 c4 b a2 d4 c  a1
-  <d,, g>4 d' c b  <g b>2^\fermata <fs a>2^\fermata
+  <d,, g>4~ <d g d'> <e c'> b'  <g b>2^\fermata <fs a>2^\fermata
 
   g4 c4~c g' g b,~b g' g c,~c g' g c,~c~c
   g c4~c g' g b,~b g' g c,~c g' g c,~c a'
@@ -130,6 +135,11 @@ secondCelloPart = \new Staff \with {
   midiInstrument = "cello"
 } { \clef bass  \secondCello}
 
+contrabassoPart = \new Staff \with {
+  instrumentName = "Double Bass"
+  midiInstrument = "contrabass"
+} {\clef bass \contrabasso}
+
 pianoPart = \new PianoStaff \with {
   instrumentName = "Piano"
 } <<
@@ -147,13 +157,14 @@ pianoPart = \new PianoStaff \with {
     \secondViolinPart
     \celloPart
     \secondCelloPart
+    \contrabassoPart
     \pianoPart
   >>
   \layout { }
   \midi {
     \context {
       \Score
-      tempoWholesPerMinute = #(ly:make-moment 58 4)
+      tempoWholesPerMinute = #(ly:make-moment 55 4)
     }
   }
 }
