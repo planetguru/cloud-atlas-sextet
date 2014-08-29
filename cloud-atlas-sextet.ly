@@ -23,12 +23,11 @@ global = {
 violin = \relative c'' {
   \global
   % Music follows here.
-  r1^\pppp  r1 r1 r1  c'1 b e c d b e c d~ << {d2} {b2} >> a
-  r1 r1 r1 r1 r1 r1 r1 r1  d b e d a
+  r1^\pppp  r1 r1 r1  c'1:32 b e: c: d: b: e: c: d:~ << {d2:} {b2:} >> a:
+  r1 r1 r1 r1 r1 r1 r1 r1  d:32 b: e: d: a:
 
   % oscilate
-  r1 r1 r1 r1 r r r r
-
+  r1 r r r r r r r
 }
 
 secondViolin = \relative c'' {
@@ -41,6 +40,21 @@ secondViolin = \relative c'' {
   g8^. r g8^. r  g8^.  r g8^. r
 
   %oscillate
+  r1 r1 r1 r1 r r r r
+}
+
+viola = \relative c'' {
+  \global
+  % Music follows here.
+  r1 r r r r r r r r r r r r r
+  %chip
+  c8^\upbow^. r  c8^. r c8^. r c8^. r    e8^. r e8^. r   e8^. r e8^. r       e8^. r e8^. r e8^. r e8^. r
+  a8^. r a8^. r  a8^. r  a8^. r                 g8^. r g8^. r  g8^. r  g8^. r       g8^. r g8^. r  g8^. r  g8^. r
+  e8^. r e8^. r  e8^. r  e8^. r                 a8^. r a8^. r  a8^. r  a8^. r       f8^. r  f8^. r  f8^. r  f8^. r
+
+  %tremolo chip
+
+  % oscilate
   r1 r1 r1 r1 r r r r
 }
 
@@ -68,7 +82,7 @@ contrabasso = \relative c {
   g8^. r g8^. r g8^. r g8^. r   e^. r e^. r e^. r e^. r   a^. r a^. r a^. r a^. r   d^. r d^. r d^. r d^. r   d^. r d^. r d^. r d^. r
 
   %oscillate
-  c^. r   c^. r   c^. r   c^. r  e^. r  e^. r  e^. r  e^. r   a^.r  a^.r  a^.r  a^.r   f^.r  f^.r  f^.r  f^.r   c^.r c^.r c^.r c^.r   b'^.r b^.r b^.r b^.r
+  c,^. r   c^. r   c^. r   c^. r  e^. r  e^. r  e^. r  e^. r   a^.r  a^.r  a^.r  a^.r   f^.r  f^.r  f^.r  f^.r   c^.r c^.r c^.r c^.r   b'^.r b^.r b^.r b^.r
   a^.r  a^.r  a^.r  a^.r  f^.r  f^.r  f^.r  f^.r   g^.r  g^.r  g^.r  g^.r  e^.r  e^.r  e^.r  e^.r  a^.r  a^.r  a^.r  a^.r  f^.r f^.r f^.r f^.r
   g^.r  g^.r  g^.r  g^.r  e^.r e^.r  e^.r  e^.r  a^.r  a^.r a^.r a^.r  d,^.r d^.r d^.r d^.r
 
@@ -125,6 +139,11 @@ secondViolinPart = \new Staff \with {
   midiInstrument = "violin"
 } \secondViolin
 
+violaPart = \new Staff \with {
+  instrumentName = "Viola"
+  midiInstrument = "viola"
+} \viola
+
 celloPart = \new Staff \with {
   instrumentName = "Cello 1"
   midiInstrument = "cello"
@@ -155,6 +174,7 @@ pianoPart = \new PianoStaff \with {
   <<
     \violinPart
     \secondViolinPart
+    \violaPart
     \celloPart
     \secondCelloPart
     \contrabassoPart
