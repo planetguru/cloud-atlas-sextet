@@ -27,7 +27,7 @@ violin = \relative c'' {
   r1 r1 r1 r1 r1 r1 r1 r1  d:32 b: e: d: a:
 
   % oscilate
-  r1 r r r r r r r
+  r1 r r r r r r r r r r r
 }
 
 violinOneTwo = \relative c'' {
@@ -35,7 +35,9 @@ violinOneTwo = \relative c'' {
   % Music follows here.
 r1 r r r r r r r r r r r r r r r r r r r r r r r r r r
 %oscillate:  Legato first violin to be merged with violin for scorint
-g2^\downbow a^\upbow g^\downbow c4^( b4) a2 c4 a4 a2 c4 a4 g2 a2 b2 r4 b4 a2 c4 a4 a2
+g2^\downbow a^\upbow g^\downbow c4^( b4) a2 c4 a4 a2 c4 a4 
+g2 a2 b2 r4 b4 a2 c4 a4 a2 r4 a4
+g2 a2 b2~b4 b a2 a g b a b a 
 }
 
 secondViolin = \relative c'' {
@@ -71,7 +73,7 @@ viola = \relative c'' {
   %tremolo chip
 
   % oscilate
-  r1 r1 r1 r1 r r r r
+  r1 r1 r1 r1 r r r r r r r r
 }
 
 cello = \relative c {
@@ -81,7 +83,7 @@ cello = \relative c {
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
 
   %oscillate
-  r1 r1 r1 r1 r r r r
+  r1 r1 r1 r1 r r r r r r r r
 }
 
 secondCello = \relative c {
