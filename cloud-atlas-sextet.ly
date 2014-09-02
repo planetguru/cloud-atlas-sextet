@@ -30,6 +30,14 @@ violin = \relative c'' {
   r1 r r r r r r r
 }
 
+violinOneTwo = \relative c'' {
+  \global
+  % Music follows here.
+r1 r r r r r r r r r r r r r r r r r r r r r r r r r r
+%oscillate:  Legato first violin to be merged with violin for scorint
+g2^\downbow a^\upbow g^\downbow c4^( b4) a2 c4 a4 a2 c4 a4 g2 a2 b2 r4 b4 a2 c4 a4 a2
+}
+
 secondViolin = \relative c'' {
   \global
   % Music follows here.
@@ -40,7 +48,11 @@ secondViolin = \relative c'' {
   g8^. r g8^. r  g8^.  r g8^. r
 
   %oscillate
-  r1 r1 r1 r1 r r r r
+  g,16 e g e g e g e      a e a e a e a e     g e g e g e g e      c' e, c' e, b' e, b' e,
+ a e a e a e a e     c' e, c' e, a' e, a' e      a e a e a e a e   c' e, c' e, a' e, a' e     
+ g e g e g e g e      a e a e a e a e     b e b e b e b e     g,16 e g e g e g e
+ c' e, c' e, a' e, a' e      a a a a
+
 }
 
 viola = \relative c'' {
@@ -48,10 +60,14 @@ viola = \relative c'' {
   % Music follows here.
   r1 r r r r r r r r r r r r r
   %chip
-  c8^\upbow^. r  c8^. r c8^. r c8^. r    e8^. r e8^. r   e8^. r e8^. r       e8^. r e8^. r e8^. r e8^. r
+  g8^\upbow^. r  g8^. r g8^. r g8^. r    g8^. r g8^. r   g8^. r g8^. r       a8^. r a8^. r a8^. r a8^. r
   a8^. r a8^. r  a8^. r  a8^. r                 g8^. r g8^. r  g8^. r  g8^. r       g8^. r g8^. r  g8^. r  g8^. r
-  e8^. r e8^. r  e8^. r  e8^. r                 a8^. r a8^. r  a8^. r  a8^. r       f8^. r  f8^. r  f8^. r  f8^. r
+  c8^. r c8^. r  c8^. r  c8^. r                 a8^. r a8^. r  a8^. r  a8^. r
 
+  b8^. r  b8^. r  b8^.  r  b8^. r     g8^. r g8^. r  g8^. r  g8^. r    c8^. r c8^. r  c8^. r  c8^. r
+  b8^. r  b8^. r  b8^.  r  b8^. r     a8^. r a8^. r  a8^. r  a8^. r
+
+  %  a  g   b    c   a
   %tremolo chip
 
   % oscilate
@@ -65,7 +81,7 @@ cello = \relative c {
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
 
   %oscillate
-  g16 e g e g e g e  a e a e a e a e g e g e g e g e c' e, c' e, b' e, b' e,
+  r1 r1 r1 r1 r r r r
 }
 
 secondCello = \relative c {
@@ -77,12 +93,12 @@ contrabasso = \relative c {
   \global
   % Music follows here.
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
-  c,8^\pp^. r c8^. r c8^. r c8^. r  e8^. r e8^. r e8^. r e8^. r  a8^. r a8^. r a8^. r a8^. r  <f>8^. r <f>8^. r <f>8^. r <f>8^. r
-  c8^\pp^. r c8^. r c8^. r c8^. r  b8^. r b8^. r b8^. r b8^. r  a'8^. r a8^. r a8^. r a8^. r  f8^. r f8^. r f8^. r f8^. r
-  g8^. r g8^. r g8^. r g8^. r   e^. r e^. r e^. r e^. r   a^. r a^. r a^. r a^. r   d^. r d^. r d^. r d^. r   d^. r d^. r d^. r d^. r
+  c,8^\pp^. r c8^. r c8^. r c8^. r     e8^. r e8^. r e8^. r e8^. r     a8^. r a8^. r a8^. r a8^. r      <f>8^. r <f>8^. r <f>8^. r <f>8^. r
+  c8^\pp^. r c8^. r c8^. r c8^. r      b8^. r b8^. r b8^. r b8^. r     a'8^. r a8^. r a8^. r a8^. r      f8^. r f8^. r f8^. r f8^. r
+  g8^. r g8^. r g8^. r g8^. r       e^. r e^. r e^. r e^. r      a^. r a^. r a^. r a^. r   d,^. r d^. r d^. r d^. r      d^. r d^. r d^. r d^. r
 
   %oscillate
-  c,^. r   c^. r   c^. r   c^. r  e^. r  e^. r  e^. r  e^. r   a^.r  a^.r  a^.r  a^.r   f^.r  f^.r  f^.r  f^.r   c^.r c^.r c^.r c^.r   b'^.r b^.r b^.r b^.r
+  c^. r   c^. r   c^. r   c^. r  e^. r  e^. r  e^. r  e^. r   a^.r  a^.r  a^.r  a^.r   f^.r  f^.r  f^.r  f^.r   c^.r c^.r c^.r c^.r   b'^.r b^.r b^.r b^.r
   a^.r  a^.r  a^.r  a^.r  f^.r  f^.r  f^.r  f^.r   g^.r  g^.r  g^.r  g^.r  e^.r  e^.r  e^.r  e^.r  a^.r  a^.r  a^.r  a^.r  f^.r f^.r f^.r f^.r
   g^.r  g^.r  g^.r  g^.r  e^.r e^.r  e^.r  e^.r  a^.r  a^.r a^.r a^.r  d,^.r d^.r d^.r d^.r
 
@@ -134,6 +150,13 @@ violinPart = \new Staff \with {
   midiInstrument = "violin"
 } \violin
 
+% this part should merge into first violin
+% this is created to allow different midi instruments for tremolo and legato violins
+violinOneTwoPart = \new Staff \with {
+  instrumentName = "Violin 1.1"
+  midiInstrument = "violin one two"
+} \violinOneTwo
+
 secondViolinPart = \new Staff \with {
   instrumentName = "Violin 2"
   midiInstrument = "violin"
@@ -173,6 +196,7 @@ pianoPart = \new PianoStaff \with {
 \score {
   <<
     \violinPart
+    \violinOneTwoPart
     \secondViolinPart
     \violaPart
     \celloPart
