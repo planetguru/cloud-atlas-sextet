@@ -164,7 +164,7 @@ violinPart = \new Staff \with {
 % this is created to allow different midi instruments for tremolo and legato violins
 violinOneTwoPart = \new Staff \with {
   instrumentName = "Violin 1.1"
-  midiInstrument = "violin one two"
+  midiInstrument = "violin"
 } \violinOneTwo
 
 secondViolinPart = \new Staff \with {
