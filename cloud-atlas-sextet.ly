@@ -27,17 +27,18 @@ violin = \relative c'' {
   r1 r1 r1 r1 r1 r1 r1 r1  d:32 b: e: d: a:
 
   % oscilate
-  r1 r r r r r r r r r r r
+  r1 r r r r r r r r r r r r r r r
 }
 
 violinOneTwo = \relative c'' {
   \global
   % Music follows here.
-r1 r r r r r r r r r r r r r r r r r r r r r r r r r r
-%oscillate:  Legato first violin to be merged with violin for scorint
-g2^\downbow a^\upbow g^\downbow c4^( b4) a2 c4 a4 a2 c4 a4 
-g2 a2 b2 r4 b4 a2 c4 a4 a2 r4 a4
-g2 a2 b2~b4 b a2 a g b a b a 
+  r1 r r r r r r r r r r r r r r r r r r r r r r r r r r
+  %oscillate:  Legato first violin to be merged with violin for scorint
+  e,2^\downbow a^\upbow g^\downbow c4^( b4) a2 c4 a4 a2 c4 a4
+  g2 a2 b2 r4 b4 a2 c4 a4 a2  r4 a4
+  % strong crescendo on the first a2 below this comment
+  g2 a2 b2 r4 b4 a2 a  a2 e4 d4 g2  a2 b2 ~r4 b4 a2 a d,2 d
 }
 
 secondViolin = \relative c'' {
@@ -50,10 +51,15 @@ secondViolin = \relative c'' {
   g8^. r g8^. r  g8^.  r g8^. r
 
   %oscillate
-  g,16 e g e g e g e      a e a e a e a e     g e g e g e g e      c' e, c' e, b' e, b' e,
- a e a e a e a e     c' e, c' e, a' e, a' e      a e a e a e a e   c' e, c' e, a' e, a' e     
- g e g e g e g e      a e a e a e a e     b e b e b e b e     g,16 e g e g e g e
- c' e, c' e, a' e, a' e      a a a a
+g8^.  g^.  g^.  g^.    a^.  a^.  a^.  a^.      g^.  g^.  g^.  g^.     c^.  c^.  b^.  b^.              
+a^.  a^.  a^.  a^.     c^.  c^.  a^.  a^.      a^.  a^.  a^.  a^.     c^.  c^.  a^.  a^.                
+g^.  g^.  g^.  g^.     a^.  a^.  a^.  a^.      b^.  b^.  b^.  b^.     r4   b8^.  b^.            
+a^.  a^.  a^.  a^.     c^.  c^.  a^.  a^.      a^.  a^.  a^.  a^.     a^.  a^.  a^.  a^.      
+g^.  g^.  g^.  g^.     a^.  a^.  a^.  a^.      b^.  b^.  b^.  b^.     r4  b8^.  b^.        
+a^.  a^.  a^.  a^.     a^.  a^.  a^.  a^.      a^.  a^.  a^.  a^.     a^.  a^.  a^.  a^.        
+g^.  g^.  g^.  g^.     a^.  a^.  a^.  a^.      b^.  b^.  b^.  b^.     b^.  b^.  b^.  b^.          
+a^.  a^.  a^.  a^.     a^.  a^.  a^.  a^.      b^.  b^.  b^.  b^.     a^.  a^.  a^.  a^.
+%FIN
 
 }
 
@@ -73,7 +79,7 @@ viola = \relative c'' {
   %tremolo chip
 
   % oscilate
-  r1 r1 r1 r1 r r r r r r r r
+  r1 r1 r1 r1 r r r r r r r r r r r r
 }
 
 cello = \relative c {
@@ -83,7 +89,7 @@ cello = \relative c {
   r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1
 
   %oscillate
-  r1 r1 r1 r1 r r r r r r r r
+  r1 r1 r1 r1 r r r r r r r r r r r r
 }
 
 secondCello = \relative c {
@@ -124,7 +130,8 @@ right = \relative c'' {
   g4 c4~c g' g b,~b g' g c,~c g' g c,~c~c
   g c4~c g' g b,~b g' g c,~c g' g c,~c a'
   g d' c b g2 c4 b a2 d4 c  a1
-  <d,, g>4 d' c b  g2 c4 b a2 d4 c b2 c
+  <d,, g>4 d' c b  g2 c4 b a2 d4 c
+  <g b>2^\fermata <fs a>2^\fermata
 
 }
 
@@ -143,7 +150,8 @@ left = \relative c' {
   %oscillate
   r1 r1 r1 r1 r1 r1 r1 r1
   \clef treble \stemUp <g b>1 <e g b> <e a c> <f a c>
-  \clef bass \stemDown <b,, g'>2 <e b'> <d d'>4
+  \clef bass \stemDown <b,, g'>2 <e b'>   <e g b>1
+  <e a c>1  <d d'>2 <d d'>
 
 }
 
