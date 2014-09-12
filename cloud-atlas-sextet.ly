@@ -1,6 +1,11 @@
 \version "2.12.3"
 \include "english.ly"
 
+%
+% Note;  Violin 1 and Violin 1.2 should be merged on final scoring
+% These have been separated to allow different instruments in Logic
+% Similarly, viola part is split between viola and viola 2. These will merge
+
 \header {
   title = "Cloud Atlas Sextet"
   instrument = "Piano and Strings"
@@ -82,6 +87,25 @@ viola = \relative c'' {
   r1 r1 r1 r1 r r r r r r r r r r r r
 }
 
+violaTwo = \relative c'' {
+  \global
+  % Music follows here.
+  r1 r r r r r r r r r r r r r
+
+  % oscilate
+  r1 r1 r1 r1 r r r r r r r r r r r r
+}
+
+
+flute = \relative c'' {
+  \global
+  % Music follows here.
+  r1 r r r r r r r r r r r r r
+
+  % oscilate
+  r1 r1 r1 r1 r r r r r r r r r r r r
+}
+
 cello = \relative c {
   \global
   % Music follows here.
@@ -92,10 +116,6 @@ cello = \relative c {
   r1 r1 r1 r1 r r r r r r r r r r r r
 }
 
-secondCello = \relative c {
-  \global
-
-}
 
 contrabasso = \relative c {
   \global
@@ -163,7 +183,7 @@ violinPart = \new Staff \with {
 % this part should merge into first violin
 % this is created to allow different midi instruments for tremolo and legato violins
 violinOneTwoPart = \new Staff \with {
-  instrumentName = "Violin 1.1"
+  instrumentName = "Violin 1.2"
   midiInstrument = "violin"
 } \violinOneTwo
 
@@ -177,20 +197,25 @@ violaPart = \new Staff \with {
   midiInstrument = "viola"
 } \viola
 
+violaTwoPart = \new Staff \with {
+  instrumentName = "Viola 2"
+  midiInstrument = "viola"
+} \viola
+
 celloPart = \new Staff \with {
   instrumentName = "Cello 1"
   midiInstrument = "cello"
 } { \clef bass  \cello}
 
-secondCelloPart = \new Staff \with {
-  instrumentName = "Cello 2"
-  midiInstrument = "cello"
-} { \clef bass  \secondCello}
-
 contrabassoPart = \new Staff \with {
   instrumentName = "Double Bass"
   midiInstrument = "contrabass"
 } {\clef bass \contrabasso}
+
+flutePart = \new Staff \with {
+  instrumentName = "Flute"
+  midiInstrument = "flute"
+} \flute
 
 pianoPart = \new PianoStaff \with {
   instrumentName = "Piano"
@@ -209,9 +234,10 @@ pianoPart = \new PianoStaff \with {
     \violinOneTwoPart
     \secondViolinPart
     \violaPart
+    \violaTwoPart
     \celloPart
-    \secondCelloPart
     \contrabassoPart
+    \flutePart
     \pianoPart
   >>
   \layout { }
