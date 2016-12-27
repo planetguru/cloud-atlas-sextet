@@ -193,6 +193,7 @@ secondViolinPart = \new Staff \with {
 } \secondViolin
 
 violaPart = \new Staff \with {
+  \clef alto
   instrumentName = "Viola"
   midiInstrument = "viola"
 } \viola
